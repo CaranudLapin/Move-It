@@ -55,15 +55,15 @@ public class MovingBoxItem extends PlaceableItem implements ItemInteractAction {
         int tileX = x / 32;
         int tileY = y / 32;
         ObjectEntity entity = level.entityManager.getObjectEntity(tileX, tileY);
-        if (entity instanceof InventoryObjectEntity) {
+        if (level.isProtected(tileX, tileY)) {
+            return false;
+        } else if (entity instanceof InventoryObjectEntity) {
             InventoryObjectEntity invEnt = (InventoryObjectEntity)entity;
             if (invEnt.inventory.getAmount(level,player,ItemRegistry.getItem("movingBoxPacked"),"box") <= 0) {
                 return !(player.getPositionPoint().distance((double) (tileX * 32 + 16), (double) (tileY * 32 + 16)) > (double) this.getPlaceRange(item, player));
             } else {
                 return false;
             }
-        } else if (level.isProtected(tileX, tileY)) {
-            return false;
         } else {
             return false;
         }
@@ -74,15 +74,15 @@ public class MovingBoxItem extends PlaceableItem implements ItemInteractAction {
         int tileY = y / 32;
         ObjectEntity entity = level.entityManager.getObjectEntity(tileX, tileY);
 
-        if (entity instanceof InventoryObjectEntity) {
+        if (level.isProtected(tileX, tileY)) {
+            return "protected";
+        } else if (entity instanceof InventoryObjectEntity) {
             InventoryObjectEntity invEnt = (InventoryObjectEntity)entity;
             if (invEnt.inventory.getAmount(level,player,ItemRegistry.getItem("movingBoxPacked"),"box") <= 0) {
                 return player.getPositionPoint().distance((double) (tileX * 32 + 16), (double) (tileY * 32 + 16)) > (double) this.getPlaceRange(item, player) ? "outofrange" : null;
             } else {
                 return "chest";
             }
-        } else if (level.isProtected(tileX, tileY)) {
-            return "protected";
         } else {
             return "blocked";
         }
@@ -95,7 +95,7 @@ public class MovingBoxItem extends PlaceableItem implements ItemInteractAction {
     public InventoryItem onLevelInteract(Level level, int x, int y, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int seed, PacketReader contentReader) {
         int tileX = x / 32;
         int tileY = y / 32;
-        if (level.isServer()) {
+        if (level.isServer() && !level.isProtected) {
             ObjectEntity entity = level.entityManager.getObjectEntity(tileX, tileY);
             if (entity instanceof InventoryObjectEntity) {
                 InventoryObjectEntity invEnt = (InventoryObjectEntity) entity;
