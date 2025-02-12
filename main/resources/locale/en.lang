@@ -1,0 +1,23 @@
+[item]
+movingBox=Empty Moving Box
+movingBoxPacked=Packed Moving Box
+
+[itemtooltip]
+movingboxitemtip=[input=mouse2]Pack up a chest
+movingboxitemtip2=Slows down the player while held
+movingboxitemtip3=Will not pack a chest if a Packed Moving Box is inside
+movingboxitemtip4=§#F2800DSingle Use§#FFFFFF
+
+movingboxchesttip=[input=mouse2]Place chest down
+movingboxchesttip2=Can only be placed on empty tiles
+movingboxchestnametip=§#00B715Chest:§#FFFFFF <key>
+
+[controls]
+pickup=Pack
+unpack=Unpack
+
+[buff]
+MovingBoxSlow=Carrying a heavy box!
+
+[ui]
+attackblocked=Use M2
