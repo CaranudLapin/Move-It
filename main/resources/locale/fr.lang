@@ -1,0 +1,30 @@
+# Traduction réalisée par Caranud (https://steamcommunity.com/id/Caranud/)
+# Version de mod : 1.0.6 [24/10/25]
+# Version de jeu : 1.0.1 [17/10/25] (testé fonctionnel sur la 1.0.2)
+# Date de la dernière traduction : 16/11/2025
+# Note de Caranud : n’hésitez pas à reprendre cette traduction si je ne suis plus actif et disponible depuis un moment ! :) Je suis également sur le serveur Discord (https://discord.com/invite/HSvuUuA).
+
+[item]
+movingBox=Carton de déménagement (vide)
+movingBoxPacked=Carton de déménagement (plein)
+anychest=n’importe quel coffre
+
+[itemtooltip]
+movingboxitemtip=Appuyez sur [input=mouse2] pour remplir votre carton avec le coffre sélectionné.
+movingboxitemtip2=Ralentit le personnage une fois porté.
+movingboxitemtip3=Ne peut pas remplir une caisse si un autre carton de déménagement se trouve à l’intérieur.
+movingboxitemtip4=§#F2800DUtilisation unique§#FFFFFF, ne peut pas être réutilisé une fois vidé.
+
+movingboxchesttip=Appuyez sur [input=mouse2] pour déposer le coffre.
+movingboxchesttip2=Peut être placé uniquement sur une case vide.
+movingboxchestnametip=§#00B715Coffre transporté :§#FFFFFF <key>
+
+[controls]
+pickup=Remplir votre carton de déménagement
+unpack=Vider votre carton de déménagement
+
+[buff]
+MovingBoxSlow=En plein déménagement, ralenti par la caisse transportée !
+
+[ui]
+attackblocked=Utilisez [input=mouse2] !
